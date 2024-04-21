@@ -1,0 +1,9 @@
+{
+    "dependencies": {
+        "express": "^4.19.2",
+        "redis": "^4.6.13",
+        "uuid": "^9.0.1",
+        "cookie-parser": "1.4.6",
+        "nunjucks": "3.2.4"
+    }
+}

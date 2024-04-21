@@ -1,0 +1,4 @@
+category: misc
+name: Polyglot
+description: I've created a HTTP server that serves not just HTTP but also a few other protocols. Can you find the flag?
+flag: UMASS{us1ng_4_tcp_t1me0ut_t0_d3t3ct_ftp_l0l}

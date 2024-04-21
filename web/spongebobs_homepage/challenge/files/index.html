@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spongebob Squarepants</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #8fdde7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header, nav, section, footer {
+            width: 100%;
+            text-align: center;
+        }
+
+        .profile-pic {
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            color: black;
+            text-shadow: 3px 3px white;
+            background-image: url('/assets/image?name=spongebob&size=200x200');
+            animation: marquee 10s linear infinite;
+        }
+
+        nav {
+            background: #ffcc00;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .nav-highlight {
+            color: #d10000;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: #d10000;
+            margin: 20px 0;
+        }
+
+        footer {
+            padding: 20px 0;
+            margin-top: auto;
+
+            color: black;
+            text-shadow: 1px 1px white;
+            
+            background: #ffcc00;
+            background-position: center;
+            background-size: contain;
+            background-image: url('/assets/image?name=spongebob&size=999x200');
+        }
+
+        @keyframes marquee {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="profile-pic">
+        <h1>Spongebob Squarepants</h1>
+    </header>
+    <nav>
+        <a href="#home" class="nav-highlight">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#friends">Friends</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+    <section id="home">
+        <h2 class="section-title">Welcome!</h2>
+        <p>Welcome to my undersea world! Dive into the adventures of the Bikini Bottom.</p>
+    </section>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I live in a pineapple under the sea. I love jellyfishing and blowing bubbles!</p>
+        <img src="/assets/image?name=house&size=300x494" alt="Spongebob's Pineapple House" style="width:100%; max-width:300px;">
+    </section>
+    <footer>
+        <p>Contact me at: spongebob@spongebob-blog.ctf.umasscybersec.org</p>
+    </footer>
+</body>
+</html>

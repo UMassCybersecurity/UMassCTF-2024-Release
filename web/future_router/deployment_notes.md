@@ -1,0 +1,1 @@
+Please make `planktons_router`, `patricks-rock`, `spongebobs-spatula`, and `squidwards-clarinet` all on the same local network called `backend`. `backend` cannot communicate to anything else except the nginx proxy `frontend`. So please ensure these `backend` has no internet access.

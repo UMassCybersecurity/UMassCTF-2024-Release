@@ -1,0 +1,9 @@
+# FuTuR3 Router
+
+Mr. Krabs just got a brand new router in the mail for him to use in the Krusty Krab. There was no mailing address so he's tasked you with figuring out where the router is from and finding a flag!
+
+---
+
+FLAG: UMASS{W3lC0m3_t0_Th3_FuTur3_Kr4bS_c28e1089b2}
+
+This challenge is supposed to emulate a router. There is a cURL feature that lets you curl the internal services present on the dashboard. You can use the endpoint to also curl local files. You can use curl to see what command is being ran by the current process `file:///proc/self/cmdline`. In this you can see gunicorn is being ran with app:app meaning it's reading the `app` object from the module `app.py`. Then we can read `file:///proc/self/cwd/app.py` to leak the initial source code. It imports from `blueprints.routes` so we can read `file:///proc/self/cwd/blueprints/routes.py`. This shows us the source code of the routes and one commented out route leads us to `../karen/customerservice.py`. In that file we can see that our input to the customer service bot is being xor'd by a private key so if we simply xor our input beforehand we can send content to the bot. If the bot decodes our content and sees "krabby patty" it will log it to a file using the command line. So, we can simply just send `krabby patty $(sleep 5)` to see that our command sleeps, meaning it ran. Since the server has no internet, we cannot exfiltrate data remotely. However we can write to local files in `/tmp`, so doing `krabby patty $(ls / > /tmp/out)` will write the command output to a file in tmp. Then we can use the previous curl to read `file:///tmp/out` and get our command output. Finally, we see flag is in the root directory and read `file:///[path-to-flag]`.

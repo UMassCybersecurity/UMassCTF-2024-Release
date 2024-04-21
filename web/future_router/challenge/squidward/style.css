@@ -1,0 +1,91 @@
+body {
+    font-family: serif, Georgia, Times New Roman;
+    background-color: teal;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.navigation {
+    background-color: #333;
+    padding: 10px;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+.about-me img {
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+}
+
+.portfolio .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.portfolio .gallery img {
+    margin: 10px;
+    width: 200px;
+}
+
+.clarinet-section audio {
+    margin-bottom: 10px;
+}
+
+.contact-me form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contact-me label {
+    margin-bottom: 5px;
+}
+
+.contact-me textarea {
+    height: 100px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}

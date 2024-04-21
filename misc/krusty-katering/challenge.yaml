@@ -1,0 +1,16 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: krusty-katering
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: false

@@ -1,0 +1,39 @@
+{% include "base.html" %}
+{% block content %}
+
+<body>
+    <br>
+    <div class="container-md text-center">
+        <div class="container-lg" style="background-color: rgba(118, 178, 210, 0.75);">
+            <h2>Router Dashboard - Devices on the Network</h2>
+            <div class="accordion">
+
+
+                {% for device in network %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#{{device.hostname}}" aria-expanded="true"
+                            aria-controls="{{device.hostname}}">
+                            {{device.hostname}}
+                        </button>
+                    </h2>
+                    <div id="{{device.hostname}}" class="accordion-collapse collapse show"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Hostname:{{device.hostname}}</strong>
+                            <br>
+                            <strong>Port - Service</strong>
+                            {% for port in device.ports %}
+                            <p>
+                                {{port.service}}:{{port.num}}
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</body>
+{% endblock %}

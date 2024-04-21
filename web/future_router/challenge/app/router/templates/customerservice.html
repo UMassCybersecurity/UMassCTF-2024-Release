@@ -1,0 +1,40 @@
+{% include "base.html" %}
+{% block content %}
+<script>
+    window.onload = () => {
+        const ws = new WebSocket(`ws:///${location.host}/app/`);
+        ws.onmessage = (resp) => {
+            response_field.innerText = resp.data;
+        };
+        agent_submit.onclick = () => {
+            ws.send(agent_text.value);
+            agent_text.value = '';
+        }
+    }
+</script>
+
+<body>
+    <br>
+    <div class="container-md text-center">
+        <div class="container-lg" style="background-color: rgba(118, 178, 210, 0.75);">
+            <h2>Welcome to the FuTuR3 r0UT3R Customer Service</h2>
+            The agent is currently under construction and does not
+            work properly. Please visit again when it is working!
+            <br>
+            <h4>Message an Agent!</h4>
+            <div class="container-lg">
+                <input id="agent_text" type="text">
+                <button id="agent_submit">Submit!</button><br>
+            </div>
+            <h4>Customer Service response</h4>
+            <div class="container-lg" style="background-color: rgba(196, 196, 196, .75); text-align:justify">
+                <p id="response_field">
+                </p>
+            </div>
+            <br>
+        </div>
+
+    </div>
+
+</body>
+{% endblock %}

@@ -1,0 +1,17 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: mitigations-are-awesome
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  horizontalPodAutoscalerSpec:
+    maxReplicas: 16
+    minReplicas: 4
+    targetCPUUtilizationPercentage: 60
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 1337

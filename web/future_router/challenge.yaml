@@ -1,0 +1,135 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: future-router
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  horizontalPodAutoscalerSpec:
+    maxReplicas: 1
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 60
+  allowConnectTo:
+    - "patricks-rock"
+    - "spongebobs-spatula"
+    - "squidwards-clarinet"
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 80
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+  persistentVolumeClaims:
+    - pvc-future-router
+  podTemplate:
+    template:
+      spec:
+        volumes:
+          - name: my-volume
+            persistentVolumeClaim:
+              claimName: pvc-future-router
+        containers:
+          - name: challenge
+            resources:
+              requests:
+                memory: "2Gi"
+                cpu: "250m"
+              limits:
+                memory: "4Gi"
+                cpu: "500m"
+            volumeMounts:
+              - mountPath: /pvc
+                name: my-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: patricks-rock
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: patricks-rock
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patricks-rock
+spec:
+  selector:
+    matchLabels:
+      app: patricks-rock
+  template:
+    metadata:
+      labels:
+        app: patricks-rock
+    spec:
+      containers:
+        - image: us.gcr.io/umassctf2024/future-router-friends:patrick
+          name: patrick
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spongebobs-spatula
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: spongebobs-spatula
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spongebobs-spatula
+spec:
+  selector:
+    matchLabels:
+      app: spongebobs-spatula
+  template:
+    metadata:
+      labels:
+        app: spongebobs-spatula
+    spec:
+      containers:
+        - image: us.gcr.io/umassctf2024/future-router-friends:spongebob
+          name: spongebob
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: squidwards-clarinet
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: squidwards-clarinet
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: squidwards-clarinet
+spec:
+  selector:
+    matchLabels:
+      app: squidwards-clarinet
+  template:
+    metadata:
+      labels:
+        app: squidwards-clarinet
+    spec:
+      containers:
+        - image: us.gcr.io/umassctf2024/future-router-friends:squidward
+          name: squidward
+          ports:
+            - containerPort: 80

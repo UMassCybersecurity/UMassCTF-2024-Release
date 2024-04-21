@@ -1,0 +1,13 @@
+category: misc
+name: Krusty Katering
+description: "Krusty Katering is hemorrhaging money, and Mr. Krabs has brought you in to fix it.
+You have 10 line cooks, and while they're okay at making Krabby patties, they can't agree on who cooks what and when.
+To make matters worse, Squidward (trying to keep his job) refuses to give you the list of orders, and will only tell you them one by one.
+Each time Squidward tells you a job, you get to add it to a cook's schedule for the day.
+Cooks cannot trade jobs, once it's on the schedule, it stays there.
+You want to ensure the last order finishes as soon as possible so that Mr. Krabs can close and count his profits.
+
+The competing Plankton's Provisions assigns their jobs randomly.
+So long as your crew is 20% more efficient than Team Chum Bucket every day this week, you're hired.
+Can you save Mr. Krabs' business?"
+flag: UMASS{subst@nd@rd_c00k}

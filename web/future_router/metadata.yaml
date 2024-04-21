@@ -1,0 +1,8 @@
+category: web 
+name: Future Router
+description: "Mr. Krabs just got a brand new router in the mail for him to use in the Krusty Krab. There was no mailing address so he's tasked you with figuring out where the router is from and finding a flag!
+
+
+Note: Please do not run brute forcing or directory busting tools on this challenge. It won't help you get a solve. 
+"
+flag: UMASS{W3lC0m3_t0_Th3_FuTur3_Kr4bS_c28e1089b2}

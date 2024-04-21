@@ -1,0 +1,13 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: "bench-225"
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 1337

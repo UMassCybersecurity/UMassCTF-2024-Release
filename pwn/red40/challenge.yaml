@@ -1,0 +1,25 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: red40
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  horizontalPodAutoscalerSpec:
+    maxReplicas: 16
+    minReplicas: 4
+    targetCPUUtilizationPercentage: 60
+  network:
+    public: false
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 1337
+  podTemplate:
+    template:
+      spec:
+        containers:
+          - name: red40
+            securityContext:
+              capabilities:
+                add: [CAP_SYS_PTRACE]

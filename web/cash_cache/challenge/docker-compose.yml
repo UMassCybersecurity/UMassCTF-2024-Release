@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build: frontend
+    ports:
+      - 5000:80
+    environment:
+      BACKEND_URL: backend
+  backend:
+    build: app
+    ports:
+      - 9000:9000
+    environment:
+      REDIS_URL: redis://cache-storage:6379
+      REDIS_HOST: cache-storage
+  cache-storage:
+    image: redis:latest
+    restart: always

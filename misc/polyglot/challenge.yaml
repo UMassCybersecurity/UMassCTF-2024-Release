@@ -1,0 +1,79 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: polygot
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        targetPort: 1337
+        port: 80
+      - protocol: "TCP"
+        targetPort: 30000
+        port: 30000
+      - protocol: "TCP"
+        targetPort: 30001
+        port: 30001
+      - protocol: "TCP"
+        targetPort: 30002
+        port: 30002
+      - protocol: "TCP"
+        targetPort: 30003
+        port: 30003
+      - protocol: "TCP"
+        targetPort: 30004
+        port: 30004
+      - protocol: "TCP"
+        targetPort: 30005
+        port: 30005
+      - protocol: "TCP"
+        targetPort: 30006
+        port: 30006
+      - protocol: "TCP"
+        targetPort: 30007
+        port: 30007
+      - protocol: "TCP"
+        targetPort: 30008
+        port: 30008
+      - protocol: "TCP"
+        targetPort: 30009
+        port: 30009
+      - protocol: "TCP"
+        targetPort: 30010
+        port: 30010
+      - protocol: "TCP"
+        targetPort: 30011
+        port: 30011
+      - protocol: "TCP"
+        targetPort: 30012
+        port: 30012
+      - protocol: "TCP"
+        targetPort: 30013
+        port: 30013
+      - protocol: "TCP"
+        targetPort: 30014
+        port: 30014
+      - protocol: "TCP"
+        targetPort: 30015
+        port: 30015
+      - protocol: "TCP"
+        targetPort: 30016
+        port: 30016
+      - protocol: "TCP"
+        targetPort: 30017
+        port: 30017
+      - protocol: "TCP"
+        targetPort: 30018
+        port: 30018
+      - protocol: "TCP"
+        targetPort: 30019
+        port: 30019
+      - protocol: "TCP"
+        targetPort: 30020
+        port: 30020
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: false

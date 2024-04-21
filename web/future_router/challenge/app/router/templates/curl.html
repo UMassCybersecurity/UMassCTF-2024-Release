@@ -1,0 +1,41 @@
+{% include "base.html" %}
+{% block content %}
+<script>
+window.onload = ()=>{
+    curlbutton.onclick = async () =>{
+        let payload = {'URL':''}
+        payload.URL = urlfield.value;
+        const resp = await fetch("/cURL",{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        const data = await resp.json();
+        console.log(data['success'])
+        response_field.innerText = 'success' in data ? `\n${data['success']}` : "An error occurred when cURL'ing!";
+    }
+}
+</script>
+<body class="text-center" >
+    <br>
+    <div class="container-lg" style="background-color: rgba(118, 178, 210, 0.75);">
+        <h2>cURL</h2>
+        Currently, you can only cURL the devices in the network.
+        <div class="container-lg">
+            <input id="urlfield" type="text">
+            <button id="curlbutton">Submit!</button><br>
+        </div>
+        <h3>cURL response</h3>
+        <div class="container-lg" style="background-color: rgba(196, 196, 196, .75); text-align:justify">
+            <pre>
+                <code id="response_field">
+                </code>          
+            </pre>
+        </div>
+        <br>
+    </div>
+
+</body>
+{% endblock %}

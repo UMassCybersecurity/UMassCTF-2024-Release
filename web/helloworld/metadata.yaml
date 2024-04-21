@@ -1,0 +1,4 @@
+name: Hello World
+description: what's up guys
+flag: UMASS{HELLO_WORLD}
+state: hidden
